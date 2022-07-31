@@ -1,43 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>E-teach</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: azure;
+    }
+  </style>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body class="md:pl-10 md:pr-10 md:p-4 p-5">
+  <!-- navbar start -->
+  <nav class="
+  relative
+  w-full
+  flex flex-wrap
+  items-center
+  justify-between
+  py-4
+  shadow
+  navbar navbar-expand-lg navbar-light
+  ">
+    <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <button class="
+     navbar-toggler
+     text-gray-500
+     border-0
+     hover:shadow-none hover:no-underline
+     py-2
+     px-2.5
+     bg-transparent
+     focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+    " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor"
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+          </path>
+        </svg>
+      </button>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+
+      <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
+        <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+          <li class="nav-item p-2">
+            <a class="nav-link text-blue-500 hover:text-blue-700 focus:text-blue-700 p-0 font-semibold"
+              href="#">Home</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link text-blue-500 hover:text-blue-700 focus:text-blue-700 p-0 font-semibold"
+              href="#">Course</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link text-blue-500 hover:text-blue-700 focus:text-blue-700 p-0 font-semibold" href="#">Contact
+              Us</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="flex items-center relative">
+        <img src="./imges/logo.png" class="h-16" alt="">
+      </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+
+
+  <!-- banner  start-->
+
+  <div id="carouselExampleCaptions" class="carousel slide relative mt-5" data-bs-ride="carousel">
+    <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner relative w-full overflow-hidden">
+      <div class="carousel-item active relative float-left w-full">
+        <img src="imges/tutor.jpg" class="block w-full lg:h-[90vh]" alt="..." />
+        <div class="carousel-caption my-auto  md:block absolute text-center ">
+          <div>
+            <h5 class="lg:text-6xl md:text-5xl text-xl text-blue-700 font-semibold  text-center uppercase">Get Started
+              Online Learning</h5>
+            <p class="text-slate-900 font-bold md:hidden lg:hidden">Online learning is education that takes place over
+              the Internet... </p>
+            <p class="text-slate-900 font-bold hidden md:block lg:block">Online learning is education that takes place
+              over the Internet. It is
+              often referred to as “e- learning” among other terms. However, online learning is just one type of
+              “distance
+              learning”........</p>
+            <div class="flex space-x-2 justify-center mt-5">
+              <button type="button"
+                class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">get
+                Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item relative float-left w-full">
+        <img src="imges/tutor-1.jpg" class="block w-full lg:h-[90vh]" alt="..." />
+        <div class="carousel-caption md:block absolute text-center">
+          <h5 class="lg:text-6xl md:text-4xl text-blue-700 font-semibold w text-center uppercase text-xl">E- Teach Lern
+            with fun and Enjoy
+          </h5>
+          <p class="text-slate-900 font-bold md:hidden lg:hidden">Online learning is education that takes place over
+            the Internet... </p>
+          <p class="text-slate-900 font-bold hidden md:block lg:block">Online learning is education that takes place
+            over the Internet. It is
+            often referred to as “e- learning” among other terms. However, online learning is just one type of
+            “distance
+            learning”........</p>
+          <div class="flex space-x-2 justify-center mt-5">
+            <button type="button"
+              class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">get
+              Started</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item relative float-left w-full">
+        <img src="imges/tutor-2.jpg" class="block lg:h-[90vh] w-full" alt="..." />
+        <div class="carousel-caption  md:block absolute text-center">
+          <h5 class="lg:text-6xl md:text-4xl text-blue-700 font-semibold w  text-center uppercase text-xl">Find your
+            perfect course in Online</h5>
+          <p class="text-slate-900 font-bold md:hidden lg:hidden">Online learning is education that takes place over the
+            Internet... </p>
+          <p class="text-slate-900 font-bold hidden md:block lg:block">Online learning is education that takes place
+            over the Internet. It is
+            often referred to as “e- learning” among other terms. However, online learning is just one type of “distance
+            learning”........</p>
+          <div class="flex space-x-2 justify-center mt-5">
+            <button type="button"
+              class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">get
+              Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+      type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+      type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- banner  end-->
+
+  <!-- our course  -->
+  <section class="">
+    <h1 class="md:text-3xl font-semibold text-center mt-16">Discover Our Popular Courses</h1>
+    <div class="flex justify-center mt-5 text-center text-sm">
+      <p class="md:w-3/5 p-5">It is a long established fact that a reader will be distracted by the readable content of
+        a page when looking at its layout.</p>
+    </div>
+    <!-- courses ------ -->
+    <div class="gap-5 lg:grid grid-cols-2 lg:gap-10 ">
+      <!-- spoken english  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/SPOKEN-ENGLISH.jpg" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Spoken Englis</h5>
+            <p class="text-gray-700 text-base mb-4">
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content
+              is a little bit longer.
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- programming for kids  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/pro.jpg" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Programming for Kids</h5>
+            <p class="text-gray-700 text-base mb-4">CodeCombat. Ages: 5-17. Cost: Free for core levels. ...
+              Stencyl. Ages: 6+ Cost: Free. ...
+              Scratch. Ages: 8-16. Cost: Free. ..
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- crafting for kids  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/craft.jpg" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">crafting for Kids</h5>
+            <p class="text-gray-700 text-base mb-4">50+ quick and easy kids craft project ideas that take less than
+              thirty minutes to make - no special tools or skills required! ANYONE can make these!
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- english gramer  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/english-gramer.png" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">English Gramer</h5>
+            <p class="text-gray-700 text-base mb-4">Learn English Grammar for Free. Choose the courses that are right
+              for you. We have all Skills and all levels of English- From Beginner to Advanced.
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+      <!-- eLearn Quran in 24 hours  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/Learn-Quran.svg" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Learn Quran in 24 hours</h5>
+            <p class="text-gray-700 text-base mb-4">Learn English Grammar for Free. Choose the courses that are right
+              for you. We have all Skills and all levels of English- From Beginner to Advanced.
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+      <!-- Learn Digital Marketing  -->
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+          <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="imges/DIGITAL-MARKETING.jpg" alt="" />
+          <div class="p-6 flex flex-col justify-start">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Learn Digital Marketing</h5>
+            <p class="text-gray-700 text-base mb-4">This is a Course for learning Quran. The object of the App is to
+              help my. Bengali speaking muslim brother and sister all over the world to learn
+            </p>
+            <p class="text-blue-600 text-sm font-bold">Price : 25 $</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // view all button -->
+    <div class="flex space-x-2 justify-center mt-10">
+      <button type="button"
+        class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View
+        All</button>
+    </div>
+  </section>
+
+  <!-- ready to join  -->
+  <div class="bg-blue-500 rounded shadow  text-center lg:text-start mt-10 lg:flex justify-between items-center p-10">
+    <div class="lg:w-2/4">
+      <h1 class="text-white font-bold text-xl "> Ready to join?</h1>
+      <p class="mt-2 text-white font-semibold">It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout.</p>
+    </div>
+    <!-- modal  -->
+    <!-- Button trigger modal -->
+    <!-- <div class="flex justify-center mt-10"> -->
+    <button type="button" class="px-6
+  h-10
+  mt-5
+  bg-white
+  text-blue-600
+  font-medium
+  text-xs
+  leading-tight
+  uppercase
+  rounded
+  shadow-md
+
+  transition
+  duration-150
+  ease-in-out" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Register Now
+    </button>
+    <!-- </div> -->
+
+    <!-- Modal -->
+    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+      id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog relative w-auto pointer-events-none">
+        <div
+          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+            <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Register Now</h5>
+            <button type="button"
+              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+              data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body relative p-4">
+            <form class="w-full max-w-lg">
+              <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-first-name">
+                    First Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="grid-first-name" type="text" placeholder="Jane">
+                  <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-last-name">
+                    Last Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-last-name" type="text" placeholder="Doe">
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                    Password
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-password" type="password" placeholder="******************">
+                  <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-2">
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                    City
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-city" type="text" placeholder="Albuquerque">
+                </div>
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    State
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-state">
+                      <option>New Mexico</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                    Zip
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-zip" type="text" placeholder="90210">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            <button type="button" class="px-6
+    py-2.5
+    bg-purple-600
+    text-white
+    font-medium
+    text-xs
+    leading-tight
+    uppercase
+    rounded
+    shadow-md
+    hover:bg-purple-700 hover:shadow-lg
+    focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0
+    active:bg-purple-800 active:shadow-lg
+    transition
+    duration-150
+    ease-in-out" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="px-6
+py-2.5
+bg-blue-600
+text-white
+font-medium
+text-xs
+leading-tight
+uppercase
+rounded
+shadow-md
+hover:bg-blue-700 hover:shadow-lg
+focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+active:bg-blue-800 active:shadow-lg
+transition
+duration-150
+ease-in-out
+ml-1">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Frequently Asked Questions -->
+
+  <section class="mt-20">
+    <div class="text-center">
+      <h1 class="text-center text-xl  font-semibold mb-10 ">Frequently Asked Questions</h1>
+      <div class="flex justify-center">
+        <p class="w-2/4 text-sm font-semibold">It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.</p>
+      </div>
+    </div>
+
+    <!-- Accordion ------ -->
+    <section class="flex justify-center">
+      <div class="accordion mt-10 lg:w-3/4" id="accordionExample5">
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingOne5">
+            <button class="
+            text-red-400
+              accordion-button
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base  text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true"
+              aria-controls="collapseOne5">
+              What is the difference between Flex and grid layout?
+            </button>
+          </h2>
+          <div id="collapseOne5" class="accordion-collapse collapse show" aria-labelledby="headingOne5">
+            <div class="accordion-body py-4 px-5">
+              CSS Grid and Flexbox are layout models that share similarities and can be used together. The key difference is that CSS Grid can be used to create two-dimensional layouts, while Flexbox can only be used to create one-dimensional layouts.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingTwo5">
+            <button class="
+              accordion-button
+              collapsed
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base text-red-400 text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false"
+              aria-controls="collapseTwo5">
+              Which is best between Bootstrap and Tailwind?
+            </button>
+          </h2>
+          <div id="collapseTwo5" class="accordion-collapse collapse" aria-labelledby="headingTwo5">
+            <div class="accordion-body py-4 px-5">Bootstrap's utility and layout classes provide you with everything you need to style a responsive webpage. With Tailwind, however, you are much more involved in styling the webpage because you end up having to create your own components using the utility classes that the framework offers.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingThree5">
+            <button class="
+              accordion-button
+              collapsed
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base text-red-400 text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree5" aria-expanded="false"
+              aria-controls="collapseThree5">
+              What is CSS box model ?
+            </button>
+          </h2>
+          <div id="collapseThree5" class="accordion-collapse collapse" aria-labelledby="headingThree5">
+            <div class="accordion-body py-4 px-5">
+              A box in CSS consists of a content area, which is where any text, images, or other HTML elements are displayed. This is optionally surrounded by padding, a border, and a margin, on one or more sides. The box model describes how these elements work together to create a box as displayed by CSS
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingThree5">
+            <button class="
+              accordion-button
+              collapsed
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base text-red-400 text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree6" aria-expanded="false"
+              aria-controls="collapseThree6">
+              What is CSS box model ?
+            </button>
+          </h2>
+          <div id="collapseThree6" class="accordion-collapse collapse" aria-labelledby="headingThree5">
+            <div class="accordion-body py-4 px-5">
+              A semantic element clearly describes its meaning to both the browser and the developer. Examples of non-semantic elements: <.div> and <.span> - Tells nothing about its content. Examples of semantic elements: <.form> , <.table> , and <.article> - Clearly defines its content.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+  <!-- Trusted by over 800+ companies -->
+
+  <div class="mt-20">
+    <h1 class="text-xl font-semibold text-center">Trusted by over 800+ companies</h1>
+    <div>
+        <img src="" alt="">
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+
 </html>
